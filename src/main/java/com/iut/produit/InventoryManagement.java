@@ -1,6 +1,10 @@
 package com.iut.produit;
 
 public class InventoryManagement {
+    private InventoryManagement() {
+        // classe de démonstration : uniquement la méthode main
+    }
+
     public static void main(String[] args) {
         // Création de produits
         AbstractProduct laptop = new ElectronicProduct("Laptop", 800.0, "HP");
