@@ -30,4 +30,13 @@ public class AbstractProductTest {
         assertThrows(IllegalArgumentException.class, () -> new ConcreteProduct("Test Product", -1.0));
     }
 
+    @Test
+    void constructorRejectsNullName() {
+        assertThrows(IllegalArgumentException.class, () -> new ConcreteProduct(null, 50.0));
+    }
+
+    @Test
+    void constructorRejectsBlankName() {
+        assertThrows(IllegalArgumentException.class, () -> new ConcreteProduct("  ", 50.0));
+    }
 }

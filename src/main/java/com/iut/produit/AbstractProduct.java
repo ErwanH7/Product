@@ -5,7 +5,10 @@ abstract class AbstractProduct {
     private final String name;
     private final double cost;
 
-    public AbstractProduct(String name, double cost) {
+    protected AbstractProduct(String name, double cost) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Le nom du produit est obligatoire");
+        }
         if (cost < 0) {
             throw new IllegalArgumentException("Le coût ne peut pas être négatif : " + cost);
         }
