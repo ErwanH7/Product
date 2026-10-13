@@ -12,5 +12,10 @@ public class AbstractProductTest {
         assertEquals(50.0, product.getCost(), 0.001); // Utilisation de 0.001 comme marge d'erreur pour les doubles
     }
 
+    @Test
+    void calculatePriceReturnsCostByDefault() {
+        AbstractProduct product = new ConcreteProduct("Test Product", 50.0);
+        assertEquals(50.0, product.calculatePrice(), 0.001);
+    }
 
 }

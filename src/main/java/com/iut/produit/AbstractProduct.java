@@ -15,8 +15,7 @@ abstract  class AbstractProduct {
     }
 
     public double calculatePrice() {
-        // Exception non gérée (division par zéro)
-        return Prcost / 0;
+        return Prcost;
     }
 
 }
