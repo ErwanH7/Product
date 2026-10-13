@@ -18,4 +18,10 @@ public class AbstractProductTest {
         assertEquals(50.0, product.calculatePrice(), 0.001);
     }
 
+    @Test
+    void testGetName() {
+        AbstractProduct product = new ConcreteProduct("Test Product", 50.0);
+        assertEquals("Test Product", product.getName());
+    }
+
 }

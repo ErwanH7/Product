@@ -1,15 +1,15 @@
 package com.iut.produit;
 
 class ElectronicProduct extends AbstractProduct {
-    private String Elbrand;
+    private final String brand;
 
     protected ElectronicProduct(String name, double cost, String brand) {
         super(name, cost);
-        this.Elbrand = brand;
+        this.brand = brand;
     }
 
     public String getBrand() {
-        return Elbrand;
+        return brand;
     }
 
     static final double MARKUP = 2.0;

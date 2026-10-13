@@ -1,21 +1,24 @@
 package com.iut.produit;
 
-abstract  class AbstractProduct {
+abstract class AbstractProduct {
 
-    private String Prname;
-    private double Prcost;
+    private final String name;
+    private final double cost;
 
     public AbstractProduct(String name, double cost) {
-        this.Prname = name;
-        this.Prcost = cost;
+        this.name = name;
+        this.cost = cost;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public double getCost() {
-        return Prcost;
+        return cost;
     }
 
     public double calculatePrice() {
-        return Prcost;
+        return cost;
     }
-
 }
