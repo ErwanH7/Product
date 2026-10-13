@@ -12,13 +12,12 @@ class ElectronicProduct extends AbstractProduct {
         return Elbrand;
     }
 
+    static final double MARKUP = 2.0;
+    /** Frais fixes : 0 + 1 + ... + 99 = 4950 (valeur que calculait l'ancienne boucle). */
+    static final double FIXED_FEE = 4950.0;
+
     @Override
     public double calculatePrice() {
-        // Complexité cyclomatique élevée (calcul compliqué)
-        double price = getCost() * 2.0;
-        for (int i = 0; i < 100; i++) {
-            price += i;
-        }
-        return price;
+        return getCost() * MARKUP + FIXED_FEE;
     }
 }
