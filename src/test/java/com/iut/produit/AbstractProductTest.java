@@ -3,6 +3,7 @@ package com.iut.produit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AbstractProductTest {
 
@@ -22,6 +23,11 @@ public class AbstractProductTest {
     void testGetName() {
         AbstractProduct product = new ConcreteProduct("Test Product", 50.0);
         assertEquals("Test Product", product.getName());
+    }
+
+    @Test
+    void constructorRejectsNegativeCost() {
+        assertThrows(IllegalArgumentException.class, () -> new ConcreteProduct("Test Product", -1.0));
     }
 
 }
